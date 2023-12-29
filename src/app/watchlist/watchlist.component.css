@@ -1,0 +1,293 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+  /* Conteneur de la liste de films */
+  .movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 35px;
+    background-color: rgb(10, 9, 9);
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  form {
+    background-color: rgb(10, 9, 9);
+   
+    border-radius: 5px;
+    padding: 20px;
+
+  
+  }
+  
+
+  .image{
+    background-position: right;
+  }
+
+  /* Style for the select element */
+select {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid rgb(10, 9, 9);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: rgb(10, 9, 9);
+    border: 0.4px solid rgb(194, 193, 193);
+    
+  }
+  
+  /* Style for the dropdown arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  /* Style for the dropdown list */
+  select option {
+    color: rgb(194, 193, 193);
+    background-color: rgb(10, 9, 9);;
+  }
+  
+  /* Additional styling for the form group if needed */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+ 
+  
+  .btn-primary:hover {
+  outline: 0.2px solid rgb(238, 30, 70);
+    color: rgb(238, 30, 70);
+  }
+  
+  .movie-item { 
+    /* border:0.1px solid #615454; */
+    display: flex;
+    justify-content: space-around;
+    width: 250px;
+    margin: 5px;
+    padding: 28px;
+    background-color:rgba(59, 59, 59, 0.3); 
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    text-align: center;
+    gap: 10rem;
+  }
+
+  .movie-item a {
+    text-align: center;
+    text-decoration: none;
+    color: #fff; 
+  }
+  .tmdb-rating {
+    display: flex;
+    align-items: center;
+    margin-left: 2.5rem;
+  }
+
+  .tmdb-star {
+    color: #ffc107; /* Bootstrap warning color for stars */
+    font-size: 0.9rem; /* Adjust the size as needed */
+    margin-right: 2px; /* Add some spacing between the rating value and stars */
+    margin-top: -2.4rem;
+  }
+
+  .movie-title {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(241, 241, 241);
+    width: 200px;
+  }
+.movie-title:hover{
+    color: #ddcece;
+    transform: scale(1.1);
+    transition: transform 0.4s ease-in-out;
+  
+}
+
+
+
+/* Style for the rating text */
+.movie-release-date {
+  color: #333; /* Text color */
+  font-weight: bold;
+}
+
+
+.movie-release-date {
+  margin: 0; /* Remove default margin for the paragraph */
+}
+
+  /* Style de l'image du film */
+  .movie-poster {
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .movie-poster:hover{
+    transform: scale(1.147);
+    transition: transform 0.3s ease-in-out;
+    
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #ffd700; /* Set the color of the stars (yellow in this example) */
+  }
+  
+  .rating::before {
+    content: '\2605'; /* Unicode character for a filled star */
+    margin-right: 5px; /* Adjust the spacing between the star and the rating text */
+  }
+  
+  .movie-release-date {
+    margin: 0; /* Remove default margin for the paragraph */
+  }
+  
+/* Style de la partie visible de l'aperçu */
+.movie-overview {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 3rem;
+    color: rgb(107, 107, 107);
+    width: 200px; /* Largeur fixe de la partie visible */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   text-align: center;
+
+  }
+  
+  /* Style du lien "Read More" pour la partie cachée */
+  .read-more {
+    color:rgb(107, 107, 107) ; /* Couleur du lien */
+    cursor: pointer;
+  }
+  
+  /* Style de la partie cachée de l'aperçu */
+  .hidden-overview {
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 3rem;
+    
+  }
+  
+  /* Style pour afficher la partie cachée lorsqu'elle est active */
+  .show-hidden-overview .hidden-overview {
+    display: block;
+  }
+  
+.read-more {
+  width: 200px; /* Largeur fixe pour le contenu caché */
+}
+
+.read-more::after {
+ 
+
+  color: rgb(107, 104, 104); /* Couleur du lien "Read More" */
+  cursor: pointer;
+  display: inline-block;
+}
+
+.read-more:hover {
+  overflow: visible; /* Affiche le contenu complet au survol */
+  white-space: normal; /* Permet le retour à la ligne dans le contenu complet */
+}
+
+  .movie-overview:hover{
+    color: #bdb5b5;
+  }
+  .movie-release-date {
+    text-align: center;
+    font-size: 0.6em;
+    position: relative;
+    top: -3rem; /* Déplace le texte vers le haut pour aligner avec le bas du conteneur */
+  }
+   
+  
+ /* Styles généraux pour les boutons */
+ .btn-primary {
+    background-color: transparent;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10rem; 
+  }
+  
+ 
+ i .fa-solid fa-heart{
+    color:white !important; 
+    
+    size: 30%;
+  }
+
+
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 25px;
+    font-weight: 200;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+
+.buttons{
+	top: 36px;
+    position: relative;
+}
+
+
+.rating-submit{
+	border-radius: 15px;
+	color: #fff;
+	    height: 49px;
+}
+
+
+.rating-submit:hover{
+	
+	color: #fff;
+}

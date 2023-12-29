@@ -1,0 +1,34 @@
+
+<br>
+<br><br>
+<br>
+<br>
+
+
+
+<div class="container mt-6">
+   
+<div class="movie-list">
+
+        <div *ngFor="let movie of favoriteMovies" class="movie-item special-movie-item">
+            <a [routerLink]="['/movie', movie.id]">
+              <div *ngIf="movie">
+                
+                <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}" class="movie-poster">
+                <br> <br> 
+                <a [routerLink]="['/review', movie.id]" >
+                  <h2 class="movie-title" >{{ movie.title }}</h2></a>
+                <p class="movie-overview read-more">{{ movie.overview }}</p>
+                <br>
+                <p class="movie-release-date">Release Date: {{ movie.release_date }}</p>
+                <div class="tmdb-rating">
+          
+                    <span class="text-muted">Rating:</span>
+                    <span class="badge bg-warning text-dark">{{ movie.vote_average }}/10</span>
+                    
+                  </div>
+              </div>
+            </a>
+          </div>
+      
+</div>

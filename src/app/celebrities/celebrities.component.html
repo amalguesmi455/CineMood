@@ -1,0 +1,34 @@
+
+
+<br>
+<br><br>
+<br>
+<br>
+
+
+
+<div class="container mt-6">
+    <div class="row">
+      <div class="col-md-12 offset-md-0">
+    
+      </div>
+    </div>
+<div class="movie-list">
+  <div *ngFor="let pop of Popular" class="movie-item special-movie-item">
+    <a [routerLink]="['/pop', pop.id]">
+      <div *ngIf="pop">
+        
+        <img [src]="'https://image.tmdb.org/t/p/w500' + pop.profile_path" alt="{{ pop.title }}" class="movie-poster">
+
+        <br> <br> 
+        <h2 class="movie-title">{{ pop.name }}</h2>
+        <p class="movie-overview read-more">{{ pop.known_for_department }}</p>
+        <br>
+        <p class="movie-release-date">Popularity: {{ pop.popularity }}</p>
+    
+      </div>
+    </a>
+  </div>
+</div>
+
+

@@ -1,0 +1,52 @@
+
+<br>
+<br><br>
+<br>
+<br>
+
+
+
+<div class="container mt-6">
+    <div class="row">
+      <div class="col-md-12 offset-md-0">
+        <form>
+          <div class="form-group">
+            <label for="movieList" style="width: 20%;margin-top: -2rem;">Choose a Serie List:</label>
+            <select class="form-control" id="movieList" name="movieList"[(ngModel)]="selectedCategory">
+                <option value="airing_today">Airing Today</option>
+              <option value="popular">Popular</option>
+              <option value="top_rated">Top Rated</option>
+              <option value="On_The_Air">On The Air</option>
+            </select>
+            <button type="submit" class="btn btn-primary" (click)="filterseries()" style="margin-left: -0.1rem;margin-top: -0.09rem; font-size: 16px;width: 12%;">Filter</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+<div class="movie-list">
+  <div *ngFor="let serie of series" class="movie-item special-movie-item">
+    <a [routerLink]="['/movie', serie.id]">
+      <div *ngIf="serie">
+        
+        <img [src]="'https://image.tmdb.org/t/p/w500' + serie.poster_path" alt="{{ serie.title }}" class="movie-poster">
+        <br> <br> 
+        <a [routerLink]="['/review', serie.id]" >
+          <h2 class="movie-title" >{{ serie.original_name }}</h2></a>
+        <p class="movie-overview read-more">{{ serie.overview }}</p>
+        <br>
+        <p class="movie-release-date">Release Date: {{ serie.first_air_date }}</p>
+        <div class="tmdb-rating">
+          
+          <span class="text-muted">Rating:</span>
+          <span class="badge bg-warning text-dark">{{ serie.vote_average }}/10</span>
+          
+        </div>
+
+        <button class="btn-primary" (click)="addToFavorites(serie.id)"><i class="fa-solid fa-heart"></i></button>
+      </div>
+    </a>
+  </div>
+</div>
+
+

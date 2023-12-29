@@ -1,0 +1,88 @@
+
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    width: 40px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 18px 16px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+  }
+  
+  .input::placeholder {
+    color: transparent;
+  }
+  /* Inside your global styles file (e.g., styles.css or styles.scss) */
+
+/* Import FontAwesome styles from CDN */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+
+.fa-heart-circle-plus {
+   
+  font-size: 24px; /* Set the font size to 24 pixels (adjust as needed) */
+  /* Add any other styles you want to apply to the icon */
+}
+
+.nav-link {
+  text-decoration: none; /* Remove underline from the link */
+  /* Add any other styles you want for the navigation link */
+}
+
+  .input:focus::placeholder {
+    color: rgb(131, 128, 128);
+  }
+
+  .name{
+    text-transform: uppercase;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: #034f9b;
+  
+  }
+  .title{
+    text-align: center;
+    font-size: 14px;
+  
+    color: #034f9b;
+    
+  }
+  
+  .input:focus,.input:placeholder-shown {
+    background-color: #fff;
+    border: 1px solid black;
+    width: 220px;
+    padding: 18px 16px 18px 45px;
+  }
+  
+  .icon {
+    position: absolute;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: #fff;
+    border-radius: 99px;
+    z-index: -4;
+    fill:  black;
+    border: 1px solid  black;
+    display: flex;
+  }
+  
+  .input:focus + .icon, .input:placeholder-shown + .icon {
+    z-index: 0;
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+  }
+  
+  
