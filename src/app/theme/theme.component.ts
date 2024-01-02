@@ -21,4 +21,13 @@ theme(mood: number): void {
    
 }
 
+
+currentTheme: string = '';
+
+
+
+  resetTheme() {
+    this.currentTheme = '';
+  }
+
 }

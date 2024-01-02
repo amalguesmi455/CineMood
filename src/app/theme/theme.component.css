@@ -9,6 +9,29 @@ label{ display: flex;
      margin-bottom: -10rem;
      color: rgb(239, 239, 239);
 }
+
+
+.card_text {
+  text-align: center;
+ margin-top: 2rem;
+ font-family: sans-serif;
+ font-weight: bold;
+ font-size: 20px;
+  display: none;
+  color: rgb(151, 149, 149);
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+.card:hover .card_text {
+  opacity: 1; 
+}
+/* .card:hover .card_image {
+  display: none;
+} */
+
+.card:hover .card_text {
+  display: block;
+}
 p{
      margin-top: 7.2rem;
     margin-bottom: -7rem;
@@ -35,6 +58,7 @@ p{
     box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(21, 0, 0, 0.22);
     cursor: pointer;
     transition: 0.4s;
+    color: black !important;
   }
   
   .card .card_image {
