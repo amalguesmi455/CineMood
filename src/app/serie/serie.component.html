@@ -31,7 +31,7 @@
         
         <img [src]="'https://image.tmdb.org/t/p/w500' + serie.poster_path" alt="{{ serie.title }}" class="movie-poster">
         <br> <br> 
-        <a [routerLink]="['/review', serie.id]" >
+        <a [routerLink]="['/reviewserie', serie.id]" >
           <h2 class="movie-title" >{{ serie.original_name }}</h2></a>
         <p class="movie-overview read-more">{{ serie.overview }}</p>
         <br>

@@ -13,6 +13,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { WatchmovieComponent } from './watchmovie/watchmovie.component';
 import { ListemoviesComponent } from './listemovies/listemovies.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ReviewsserieComponent } from './reviewsserie/reviewsserie.component';
 
 const routes: Routes = [
   {path:"",component :HomeComponent},
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path:"review/:id",component :ReviewsComponent},
   {path:"watch",component :WatchmovieComponent},
   {path:"home",component :NavbarComponent},
-
+  {path:"reviewserie/:id",component :ReviewsserieComponent},
   { path: 'listMovies/:search', component: ListemoviesComponent}
 ];
 

@@ -1,0 +1,260 @@
+/* Style for movie details component */
+
+   
+.top-section {
+    display: flex;
+    align-items: flex-start;
+  }
+   
+
+   
+  h1 {
+    /* Styles for the movie title */
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: left;
+
+   
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height: width) */
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .overview {
+    /* Styles for the movie overview */
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .actions {
+    text-align: center; /* Center align the content within the actions div */
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (adjust as needed) */
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove iframe border */
+  }
+  
+  .actions i {
+    margin: 10px; /* Add some margin around the heart and list icons */
+    font-size: 24px; /* Adjust the font size as needed */
+    cursor: pointer;
+  }
+  
+  .actions i:hover {
+    color: red; /* Change the color on hover (adjust as needed) */
+  }
+  
+h2{
+  font-size: 14px;
+}
+p{
+  font-size: 10px;
+}
+   
+ .genres{
+    text-align: center;
+    
+   }
+   h2{
+    margin-top: 1rem;
+    margin-bottom: 0.9rem;
+    text-align: center;
+    text-decoration: underline;
+   }
+   .actions i  {
+    margin-left: 10rem;
+    font-size: 2rem;
+    color: white;
+    
+   }
+   p{
+    text-align: center;
+   }
+   
+  .genres-cast-container {
+    /* Container for genres and cast sections */
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  .genres,.cast {
+    width: 100%;
+  }
+  .genres ul,.cast  ul{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .cast  ul li{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    border-radius: 0.3rem;
+    overflow: hidden;
+  }
+   
+   
+  .actor-image {
+    background-color: grey;
+    width: 100%; /* Adjust the width as needed */
+    height: 8rem;
+     /* For rounded images */
+   object-fit: cover;
+    /* Other styles as needed */
+  }
+   
+  .actor-details {
+    display: flex;
+    align-items: center;
+  }
+   
+  .cast p {
+    font-size: .8rem;
+    background: transparent;
+    width: 100%;
+    color: white;
+    margin: 0 !important;
+    height: 3rem;
+    text-align: center;
+    padding: 1rem 0;
+  }
+   
+.image{
+  object-fit: cover;
+  background: no-repeat;
+  background-size: 38%;
+  width: 50%;
+  min-height:240vh;
+  background-position: right;
+  /* margin-top: -25.5rem; */
+  background-position-x: left;
+  background-attachment: fixed;
+  border-radius: 25px;
+}
+.image:hover{
+  cursor: pointer;
+  transition:transform 0.3s ease;
+}
+  .character {
+    
+    color: #666 !important;
+    font-style: italic;
+  }
+   
+  .card {
+    
+    margin:0.5rem;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%; /* Ensure cards take full width */
+    max-width: 100%; /* Set maximum width for uniformity */
+    height: 100%; /* Maintain the height to ensure uniformity */
+    color: white;
+    margin-right: 2rem;
+    padding: auto;
+  }
+  .movie-info{
+    color: white;
+  
+  } 
+ 
+   
+  .card-img-top {
+    width: 100%;
+    height: 600px; 
+    object-fit: cover;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    /* margin-right:100% ; */
+  
+  }
+   
+   
+   
+  .movies {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    /* This will align items horizontally */
+  }
+   
+  .info {
+    flex: 1;
+    margin-right: 20px;
+    /* This will make each 'info' block take up equal space */
+  }
+   
+  /* Adjust styles as needed */
+   
+  .button{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+   
+  .btn-primary{
+    background-color: rgb(238, 30, 70);
+    border: none;
+   
+  }
+  .btn-primary:hover{
+    transform: scale(1.1);
+   
+  }
+  i:hover{
+    transform: scale(0.9);
+  }
+   
+  /* Styles for the progress ring */
+   
+  .progress-ring {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+   
+  .progress-ring__circle {
+    fill: wheat;
+    stroke: #2196f3; /* Adjust the color as needed */
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: translate(50%, 50%);
+    transform-origin: 50% 50%;
+  }
+   
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .clicked {
+    color: red !important; /* Change this to the desired color when clicked */
+  }

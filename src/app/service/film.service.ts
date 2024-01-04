@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -177,6 +177,29 @@ export class FilmService {
     const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${this.apiKey}`;
     return this.http.get(url);
   }
+
+
+  getMovieVideosS(serieId: number): Observable<any> {
+    console.log(serieId);
+    const url = `${this.apiBaseUrl}/tv/${serieId}/videos?api_key=${this.apiKey}`;
+  
+    return this.http.get(url).pipe(
+      map((response: any) => {
+        if (response && response.results) {
+          return response.results.length > 0 ? response.results : null;
+        } else {
+          throw new Error('La réponse de l\'API ne contient pas de propriété "results".');
+        }
+      }),
+      catchError(error => {
+        console.error('Erreur lors de la récupération des vidéos : ', error);
+        return of(null); // Retourner explicitement null pour gérer le cas d'erreur
+      })
+    );
+  }
+  
+  
+
   getFavoriteWatch(accountId: string): Observable<any> {
     const apiUrl = `${this.apiBaseUrl}/account/${accountId}/watchlist/movies`;
     const params = new HttpParams()
@@ -248,27 +271,41 @@ getFavoritetv(accountId: string): Observable<any> {
     const url = `${this.apiBaseUrl}/movie/${movieId}?api_key=${this.apiKey}`;
     return this.http.get(url);
   }
- 
+  getSerieDetails(serieId: number): Observable<any> {
+    const url = `${this.apiBaseUrl}/tv/${serieId}?api_key=${this.apiKey}`;
+    return this.http.get(url);
+  }
   getGenres(): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}/genre/movie/list?api_key=${this.apiKey}`);
   }
  
  
-   // Fetch cast and crew for a movie by ID
    getMovieCredits(movieId: number): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}/movie/${movieId}/credits?api_key=${this.apiKey}`);
   }
+  getGenresS(): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}/genre/tv/list?api_key=${this.apiKey}`);
+  }
  
-  // Fetch movie trailers by ID
+ 
+   
+   getMovieCreditsS(serieId: any): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}/tv/${serieId}/credits?api_key=${this.apiKey}`);
+  }
+  
   getMovieTrailers(movieId: number): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}/movie/${movieId}/videos?api_key=${this.apiKey}`);
   }
+  getMovieTrailersS(serieId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}/tv/${serieId}/videos?api_key=${this.apiKey}`);
+  }
  
-  // Fetch recommended movies for a given movie by ID
   getRecommendedMovies(movieId: number): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}/movie/${movieId}/recommendations?api_key=${this.apiKey}`);
   }
- 
+  getRecommendedMoviesS(serieId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}/tv/${serieId}/recommendations?api_key=${this.apiKey}`);
+  }
  
   discoverMovies(page=1): Observable<any> {
     const url = `${this.apiBaseUrl}/discover/movie`;

@@ -25,6 +25,7 @@ import { FavoritetvComponent } from './favoritetv/favoritetv.component';
 import { WatchmovieComponent } from './watchmovie/watchmovie.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ListemoviesComponent } from './listemovies/listemovies.component';
+import { ReviewsserieComponent } from './reviewsserie/reviewsserie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { ListemoviesComponent } from './listemovies/listemovies.component';
     FavoritetvComponent,
     WatchmovieComponent,
     ReviewsComponent,
-    ListemoviesComponent
+    ListemoviesComponent,
+    ReviewsserieComponent
   ],
   imports: [
     BrowserModule,
